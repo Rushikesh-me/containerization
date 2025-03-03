@@ -1,0 +1,10 @@
+replicas: 1
+elasticsearchUsername: elastic
+elasticsearchPassword: changeme
+service:
+  type: ClusterIP
+
+esConfig:
+  elasticsearch.yml: |
+    xpack.security.enabled: true
+    node.store.allow_mmap: false

@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: flightservice
+spec:
+    replicas: {{ .Values.flightservice.replicas }}
+    selector:
+        matchLabels:
+            app: flightservice
+    template:
+        metadata:
+            labels:
+                app: flightservice
+        spec:
+            containers:
+                - name: flightservice
+                  image: {{ .Values.flightservice.image }}
+                  ports:
+                      - containerPort: 8080
+                  env:
+                      - name: DB_HOST
+                        value: {{ .Values.flightservice.env.DB_HOST }}
+                      - name: DB_PORT
+                        value: "3306"
+                      - name: DB_USER
+                        value: {{ .Values.flightservice.env.DB_USER }}
+                      - name: DB_PASSWORD
+                        value: {{ .Values.flightservice.env.DB_PASSWORD }}
+                  resources:
+                      requests:
+                          cpu: {{ .Values.flightservice.resources.requests.cpu }}
+                          memory: {{ .Values.flightservice.resources.requests.memory }}
+                      limits:
+                          cpu: {{ .Values.flightservice.resources.limits.cpu }}
+                          memory: {{ .Values.flightservice.resources.limits.memory }}

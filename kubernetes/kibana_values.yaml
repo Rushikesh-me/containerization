@@ -1,0 +1,6 @@
+service:
+  type: LoadBalancer
+
+elasticsearch:
+  username: elastic
+  password: changeme
