@@ -16,8 +16,6 @@ The Flightservice Container Orchestration Project demonstrates the deployment an
 - **Docker Swarm Implementation**: A distributed container orchestration solution for scaling, rolling updates, and rollbacks.
 - **Kubernetes Deployment with Helm**: A production-grade deployment using Kubernetes (via Minikube) with a custom Helm chart for the Flightservice application and a Bitnami Helm chart for MySQL. Horizontal Pod Autoscaling (HPA) is also configured to dynamically adjust to load.
 
-Additionally, a project introduction video (not included in this repository) provides an overview and walkthrough of the entire setup.
-
 ## Setup and Installation
 
 ### Prerequisites
